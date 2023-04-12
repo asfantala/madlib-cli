@@ -48,10 +48,8 @@ def run_madlib():
     print("Welcome to Madlib!")
     print("MadLibs is a phrasal template word game,It consists of one player prompting others for a list of words to substitute for blanks in a story before reading aloud")
     print("So please enter words to fill in the blanks")
-    template_path = input("Please enter the filepath of your Madlibs template: ")
-    while not os.path.isfile(template_path):
-        template_path = input("Invalid filepath. Please try again: ")
-    template_path = read_template(template_path)
+    
+    template_path = read_template("assets/madlib.txt")
     parsed_template, parts = parse_template(template_path)
     inputs = []
     for language_part in parts:
@@ -62,11 +60,11 @@ def run_madlib():
     completed_madlib = merge(parsed_template, inputs)
     print("\n" + completed_madlib)
 
-    with open("../madlib-cli/completed.txt", 'w') as file:
-        file.write(completed_madlib)
+    with open("assets/completed.txt", 'w') as file:
+        file.write("assets/completed_madlib")
 
 
 run_madlib()
 
 if __name__=="__main__":
-  path="assets/dark_and_stormy_night_template.txt"
+  path="assets/madlib.txt"
