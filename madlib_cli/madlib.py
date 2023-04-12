@@ -61,10 +61,10 @@ def run_madlib():
     print("\n" + completed_madlib)
 
     with open("assets/completed.txt", 'w') as file:
-        file.write("assets/completed_madlib")
+        file.write(completed_madlib)
 
 
 run_madlib()
 
 if __name__=="__main__":
-  path="assets/madlib.txt"
+  path="assets/dark_and_stormy_night_template.txt"
